@@ -1,0 +1,55 @@
+import React from 'react';
+import bgImage from './assets/background.jpeg'
+import pizza from './assets/pizza1.png'
+import Leaves from './assets/img002.png'
+import tomato from './assets/img001.png'
+
+function Container1(props) {
+
+    const divImageLeft = () => {
+        return (
+            <>
+             <div className='border-2 border-black flex-1'>
+                1
+             </div>
+            </>
+        )
+    }
+
+    const divImageRight = () => {
+        return (
+            <>
+             <div className='border-2 border-red-500 flex-1 relative
+             flex flex-col items-start bg-transparent
+             '>
+                <img className='w-5/6 z-10' src={pizza} alt="image" />
+                <img className='w-1/4 absolute
+                right-3.5 mr-2 animate-move-left-right
+                ' src={tomato} alt="image" />
+                <img className='w-1/4 absolute
+                left-3.5 ml-3 bottom-0 animate-move-left-right
+                ' src={Leaves} alt="image" />
+             </div>
+            </>
+        )
+    }
+
+    return (
+        <div style={{backgroundImage: `url(${bgImage})`,}}
+        className='border-2 border-red-600 flex items-center justify-center bg-cover bg-center w-full
+        '>
+            <div className='border-2 border-black bg-background w-full flex justify-between max-w-screen-2xl
+            
+            flex-col
+            sm:flex-row
+            sm:items-center
+            h-auto
+            '>
+                {divImageLeft()}
+                {divImageRight()}
+            </div>
+        </div>
+    );
+}
+
+export default Container1;
