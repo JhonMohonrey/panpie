@@ -13,9 +13,15 @@ function App(props) {
       <Container2 />
       {/* <ButtonWithIcon /> */}
       {/* <Test /> */}
-      <div className='bg-green-500 h-96 border-2 border-black text-white text-3xl text-center '>1</div>
-      <div className='bg-green-500 h-96 border-2 border-black text-white text-3xl text-center'>2</div>
-      <div className='bg-green-500 h-96 border-2 border-black text-white text-3xl text-center'>3</div>
+      <div className='bg-green-500 h-96 border-2 border-black text-white text-3xl sm:text-7xl flex items-center justify-center text-center font-extrabold'>
+        In progress! 
+      </div>
+      <div className='bg-green-500 h-96 border-2 border-black text-white text-3xl sm:text-7xl flex items-center justify-center text-center font-extrabold'>
+        In progress! 
+      </div>
+      <div className='bg-green-500 h-96 border-2 border-black text-white text-3xl sm:text-7xl flex items-center justify-center text-center font-extrabold'>
+        In progress! 
+      </div>
     </div>
   );
 }
