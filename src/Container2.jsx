@@ -24,7 +24,7 @@ function Container2(props) {
     const box = (imgLink, info) => {
         return (
             <>
-                <div className='w-72 bg-white relative rounded-2xl overflow-hidden cursor-pointer '>
+                <div className='w-72 bg-white relative rounded-2xl overflow-hidden cursor-pointer shadow-2xl'>
 
                     <div className='opacity-0 hover:opacity-100 z-20 absolute top-0 bottom-0 right-0 left-0'>
                         {hover()}
@@ -54,8 +54,11 @@ function Container2(props) {
     }
 
     return (
-        <div className=' flex items-center justify-center bg-cover bg-center w-full z-10 bg-background'>
-            <div className=' bg-background w-full max-w-screen-2xl flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-6 py-5 relative'>
+        <div className=' flex items-center justify-center bg-cover bg-center w-full z-10 bg-background relative'>
+
+            <div className='bg-white absolute left-0 right-0 bottom-0 top-0 sm:top-32'></div>
+
+            <div className=' w-full max-w-screen-2xl flex flex-row flex-wrap items-center justify-center gap-5 sm:gap-6 py-16 lg:pb-24 relative'>
                 {box(mexican, "Mexican Pizzza")}
                 {box(soft, "Soft Drinks")}
                 {box(french, "French Fry")}
