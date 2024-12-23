@@ -112,6 +112,7 @@ function Container3(props) {
             itemPriceC: "$12.00",
             renderState: "pizza",
             index: "z-10",
+            viewAll: false,
         },
         {
             img: `${img3}`,
@@ -129,6 +130,8 @@ function Container3(props) {
             itemPriceC: "$23.00",
             renderState: "fries",
             index: "z-10",
+            viewAll: false,
+
         },
         {
             img: `${img4}`,
@@ -146,6 +149,8 @@ function Container3(props) {
             itemPriceC: "$10.00",
             renderState: "pizza",
             index: "z-10",
+            viewAll: false,
+
         },
         {
             img: `${img5}`,
@@ -163,6 +168,8 @@ function Container3(props) {
             itemPriceC: "$13.00",
             renderState: "sandwich",
             index: "z-10",
+            viewAll: false,
+
         },
         {
             img: `${img2}`,
@@ -180,6 +187,8 @@ function Container3(props) {
             itemPriceC: "$12.00",
             renderState: "drinks",
             index: "z-10",
+            viewAll: false,
+
         },
         {
             img: `${img7}`,
@@ -197,6 +206,8 @@ function Container3(props) {
             itemPriceC: "$16.00",
             renderState: "sandwich",
             index: "z-10",
+            viewAll: false,
+
         },
         {
             img: `${img8}`,
@@ -214,6 +225,8 @@ function Container3(props) {
             itemPriceC: "$16.00",
             renderState: "sandwich",
             index: "z-10",
+            viewAll: false,
+
         },
         {
             img: `${img6}`,
@@ -231,6 +244,8 @@ function Container3(props) {
             itemPriceC: "$16.00",
             renderState: "pizza",
             index: "z-10",
+            viewAll: false,
+
         },
      
     ])
@@ -250,7 +265,16 @@ function Container3(props) {
         const closeBtn = (id) => {
             setMenuData(prev => {
                 return prev.map(data => {
-                    return data.id === id ? {...data, isActive: false,} : {...data}
+                    return data.id === id ? {...data, isActive: false} : {...data}
+                })
+            })
+        }
+
+        const showAllBtn = (id) => {
+            setMenuData(prev => {
+                return prev.map(data => {
+                    return data.id === id ? 
+                    {...data, viewAll: !data.viewAll} : {...data, viewAll: false}
                 })
             })
         }
@@ -264,11 +288,28 @@ function Container3(props) {
             })
             
             return menuData.map((data, i) => {
-                return <div key={i} className={`border-[1px] hover:bg-[#fff7eb] hover:shadow-2xl shadow-slate-600 cursor-pointer bg-white p-2 sm:p-4 border-[#00000042] w-60 transition-all rounded-xl duration-700 ease-in-out
+                return <div key={i} className={`border-[1px] bg-inherit hover:bg-[#fff7eb] hover:shadow-2xl shadow-slate-600 cursor-pointer bg-white p-2 sm:p-4 border-[#00000042] w-60 transition-all rounded-xl duration-200 ease-in-out
+                    
                     ${data.index}
-                ${stateActive === data.renderState || stateActive === "all" ? "scale-100" : "scale-0 absolute"}`} onMouseLeave={() => {
+                ${stateActive === data.renderState || stateActive === "all" ? "scale-100" : "scale-0 absolute"}`} 
+                onMouseLeave={() => {
                     setTimeout(() => closeBtn(data.id), 10000)
-                }}>
+                    showAllBtn(data.id)
+                }} 
+                onMouseEnter={() => {
+                    showAllBtn(data.id)
+                }}
+                >
+                    
+                    <div className={`absolute left-0 right-0 top-0 flex items-center justify-center bottom-1/2 pt-10`}>
+                            <button className={`p-3 px-5 rounded-full text-xs font-bold bg-red-600 text-white 
+                            active:opacity-85 active:shadow-none shadow-lg shadow-[#0000004d] 
+                            duration-200 ease-in-out 
+                                ${!data.viewAll ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100 "}
+                                `}>
+                                VIEW OPTIONS
+                            </button>
+                    </div>
 
                     <div className=' flex items-center justify-center'>
                         <img className='w-full' src={data.img} alt="product" />
@@ -303,13 +344,13 @@ function Container3(props) {
             })
         }
 
-        return <div className=' w-full max-w-screen-2xl flex items-center justify-center gap-5 lg:gap-5 flex-wrap pb-8 lg:pb-24 '>
+        return <div className=' w-full max-w-screen-2xl flex items-center justify-center gap-5 lg:gap-5 flex-wrap pb-8 lg:pb-24'>
             {render()}
         </div>
     }
 
     return (
-        <div  className=' flex flex-col items-center justify-center bg-cover bg-center w-full z-10 bg-white relative pt-8 lg:pt-16'>
+        <div  className=' flex flex-col items-center justify-center bg-cover bg-center w-full z-10 bg-white relative pt-1 lg:pt-1'>
             {textContent()}
             {options()}
             {foodOption()}
