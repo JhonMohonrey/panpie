@@ -20,9 +20,9 @@ function App(props) {
   return (
     <div>
       <Header />
-      {/* <Container1 /> */}
-      {/* <Container2 /> */}
-      {/* <Container3 /> */}
+      <Container1 />
+      <Container2 />
+      <Container3 />
       <Container4 />
       
       {/* <ButtonWithIcon /> */}
