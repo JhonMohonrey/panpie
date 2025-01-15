@@ -13,6 +13,8 @@ module.exports = {
       fontSize: {
         // Custom font sizes
         'xxs': 'clamp(50px, 5.5vw, 90px)', // 10px
+        "fontX": "clamp(10px, 10vw, 60px)",
+        "fontY": "clamp(0px, 6vw, 60px)",
       },
       gap: {
         'gap1': 'clamp(1px, 1.5vw, 35px)',

@@ -12,6 +12,15 @@ import img8 from './assets/container3/pro_011-400x400.png'
 
 function Container3(props) {
 
+    const BtnFunction = () => {
+        return (
+            <button class="flex items-center justify-center gap-2 rounded-full before:ease relative bg-red-600 text-white p-2 px-4 overflow-hidden border-none border-red-600 font-bold shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-addToCart before:duration-300 hover:text-white 
+            hover:shadow-[#25252562] hover:before:h-64 hover:before:-translate-y-32">
+                <span class="relative z-10">ORDER NOW</span>
+            </button>
+        )
+    }
+
     const textContent = () => {
         return (
             <div className='w-full max-w-screen-2xl flex flex-row flex-wrap items-center justify-center'>
@@ -302,13 +311,20 @@ function Container3(props) {
                 >
                     
                     <div className={`absolute left-0 right-0 top-0 flex items-center justify-center bottom-1/2 pt-10`}>
-                            <button className={`p-3 px-5 rounded-full text-xs font-bold bg-red-600 text-white 
+                            {/* <button className={`p-3 px-5 rounded-full text-xs font-bold bg-red-600 text-white 
                             active:opacity-85 active:shadow-none shadow-lg shadow-[#0000004d] 
                             duration-200 ease-in-out 
                                 ${!data.viewAll ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100 "}
                                 `}>
                                 VIEW OPTIONS
+                            </button> */}
+                            <button class={`flex items-center justify-center gap-2 rounded-full before:ease border-none relative bg-red-600 text-white p-2 px-4 overflow-hidden font-bold shadow-2xl shadow-[black] transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-addToCart before:duration-300 hover:text-white 
+                            active:shadow-none hover:before:h-64 hover:before:-translate-y-32 duration-200 ease-in-out active:opacity-80 
+                            ${!data.viewAll ? "translate-y-[-100%] opacity-0" : "translate-y-0 opacity-100 "}
+                            `}>
+                                <span class="relative z-10">ORDER NOW</span>
                             </button>
+                            {/* {BtnFunction()} */}
                     </div>
 
                     <div className=' flex items-center justify-center'>

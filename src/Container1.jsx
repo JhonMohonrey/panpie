@@ -84,6 +84,15 @@ function Container1(props) {
         }
     //unordered list ===>
 
+    const BtnFunction = () => {
+        return (
+            <button class="flex items-center justify-center gap-2 rounded-full before:ease relative bg-addToCart p-2 px-4 overflow-hidden border-2 border-addToCart text-white font-bold shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-white before:duration-300 hover:text-black 
+            hover:shadow-[#25252562] hover:before:h-64 hover:before:-translate-y-32">
+                <span class="relative z-10">ORDER NOW</span>
+            </button>
+        )
+    }
+
     //button order now ===>
     const buttonOrderNow = () => {
         return (
@@ -92,10 +101,15 @@ function Container1(props) {
                     flex items-center justify-center sm:justify-start lg:my-5
                     '>
                     <div className='mb-12 mt-5 sm:mb-0 sm:mt-0'>
-                        <button className='bg-addToCart text-white font-bold p-2 pr-4 rounded-full active:opacity-85 shadow-lg active:shadow-none flex items-center justify-center'>
+                        {/* <button className='bg-addToCart text-white font-bold p-2 pr-4 rounded-full active:opacity-85 shadow-lg active:shadow-none flex items-center justify-center'>
                             <img className='w-7' src={basket} alt="image" />
                             ORDER NOW
-                        </button>
+                        </button> */}
+                        {/* <button class="flex items-center justify-center gap-2 rounded-full before:ease relative bg-addToCart p-2 px-4 overflow-hidden border-2 border-addToCart text-white font-bold shadow-2xl transition-all before:absolute before:top-1/2 before:h-0 before:w-64 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-white before:duration-300 hover:text-black 
+                            hover:shadow-[#00000062] hover:before:h-64 hover:before:-translate-y-32">
+                            <span class="relative z-10">ORDER NOW</span>
+                        </button> */}
+                        {BtnFunction()}
                     </div>
                 </div>
             </>
@@ -106,6 +120,7 @@ function Container1(props) {
         <div style={{backgroundImage: `url(${bgImage})`,}}
         className='flex items-center justify-center bg-cover bg-center w-full z-10 sm:py-10
         '>
+
             <div className=' bg-background w-full flex justify-between max-w-screen-2xl bg-inherit
             
             flex-col
