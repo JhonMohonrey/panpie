@@ -185,16 +185,18 @@ function Header(props) {
         lg:gap-2
         lg:py-5
         z-50
-        border-b-2
-        border-yellow-950
+        border-b-[1px]
+        border-[#ff6803]
         border-opacity-20
         '>
 
-            <p className='fixed text-2xl font-bold bg-white p-2 px-4 rounded-xl border-2 border-gray-950 bottom-2 left-2'>{screenSize}</p>
+            {/* <p className='fixed text-2xl font-bold bg-white p-2 px-4 rounded-xl border-2 border-gray-950 bottom-2 left-2'>{screenSize}</p> */}
+
+        
 
             {screenSize < 1024 ? 
                 <>{logoIcon()}{options()}</> :
-                <div className='border-2 border-black bg-background w-full flex items-center justify-around max-w-screen-2xl'>
+                <div className=' bg-background w-full flex items-center justify-around max-w-screen-2xl'>
                     {options()}
                     {logoIcon()}
                     {HeaderSide()}
