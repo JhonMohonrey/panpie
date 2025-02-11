@@ -45,20 +45,24 @@ function Container12(props) {
     }
 
     return (
-        <div className=' flex items-center justify-center bg-cover bg-center w-full bg-white py-10'>
-            <div className=' z-30 w-full max-w-screen-2xl flex items-center justify-center
+        <div className='
+        flex items-center justify-center bg-cover bg-center w-full bg-white py-10'>
+            <div className='
+            z-30 w-full max-w-screen-2xl flex items-center justify-center
             py-3 lg:py-10 overflow-hidden
             '>
 
                 <div className=' 
-                
-                w-full lg:w-4/5 flex items-center justify-center
+                w-full pl-[0.5rem] lg:w-4/5 flex items-center justify-center
                 '>
                     {/* {render()} */}
                    
-
-                    <Swiper
-                        spaceBetween={40}
+                    <div className='
+                        w-4/5 lg:w-full
+                    '>
+                        
+                        <Swiper
+                        spaceBetween={50}
                         slidesPerView={3}
                         breakpoints={{
                             1024: { 
@@ -70,9 +74,11 @@ function Container12(props) {
                         grabCursor={true}
                         loop={true}
                     >
+             
                         <SwiperSlide >
                             <img className="cursor-pointer object-cover  hover:opacity-85 active:opacity-70
                             transition-all duration-300
+                            
                             " src={img1} alt="icon" />
                         </SwiperSlide>
                         <SwiperSlide>
@@ -96,6 +102,10 @@ function Container12(props) {
                             transition-all duration-300" src={img6} alt="icon" />
                         </SwiperSlide>
                     </Swiper>
+
+                    </div>
+
+            
                 </div>
        
             </div>

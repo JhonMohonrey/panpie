@@ -14,20 +14,6 @@ import bottomLeft from './assets/Container8/shape31.png'
 
 function Container8(props) {
     const [offsetY, setOffsetY] = React.useState(0);
-    const [screenSize, setScreenSize] = React.useState(window.innerWidth)
-
-    React.useEffect(() => {
-      let handle = () => {
-         setScreenSize(window.innerWidth)
-      }
-
-      window.addEventListener("screenWidth", handle)
-
-      return () => {
-        window.removeEventListener("screenWidth", handle)
-      }
-    }, [])
-
 
     const handleScroll = () => {
       setOffsetY(window.scrollY);
@@ -135,15 +121,13 @@ function Container8(props) {
                     <img className='opacity-100' src={testimonial} alt="image"/>
 
                     <img
-                      className={`absolute w-[35vw] md:w-[26vw] lg:w-[9rem] lg:left-5 lg:bottom-16 left-0 bottom-8 -z-10 
-                      slight-rotate-animation  
-                      `}
+                      className="absolute sm:w-36 w-24 lg:left-8 lg:bottom-16 left-0 bottom-5 -z-10 slight-rotate-animation"
                       src={chili}
                       alt="image"
                     />
                     {/* <img className='absolute sm:w-36 w-24 lg:left-8 lg:bottom-16 left-0 bottom-5 -z-10' src={chili} alt="image" /> */}
                     <img
-                     className='absolute w-[16vw] md:w-[14vw] lg:w-[5rem] lg:right-10 lg:bottom-10 right-5 bottom-5 -z-10
+                     className='absolute sm:w-20 w-16 lg:right-8 lg:bottom-16 right-0 bottom-5 -z-10
                      slight-rotate-animation
                      ' 
                      src={leaves} 
@@ -153,7 +137,7 @@ function Container8(props) {
 
                 <div className='flex flex-col items-center lg:items-start'>
                   <p className='text-red-600 font-bold text-sm text-center lg:text-left'>TESTIMONIALS</p>
-                  <p className='font-bold text-[8vw] lg:text-3xl text-center lg:text-left mb-5 lg:mb-7'>What Our Client Says</p>
+                  <p className='font-bold text-2xl lg:text-3xl text-center lg:text-left mb-5 lg:mb-7'>What Our Client Says</p>
 
                   {renderClient()}
                   <div className='flex gap-1 mt-5 lg:mt-8 items-center'>
